@@ -1,0 +1,15 @@
+<div class="card">
+  <h2>C Kartı</h2>
+  <div class="form-group">
+    <input [(ngModel)]="newTitle" placeholder="Başlık" />
+    <textarea [(ngModel)]="newContent" placeholder="İçerik"></textarea>
+    <button (click)="addCard()">Yeni Kart Ekle</button>
+  </div>
+  <div class="card-list">
+    <div *ngFor="let card of cards" class="card-item">
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.content }}</p>
+      <button (click)="removeCard(card.id)">Sil</button>
+    </div>
+  </div>
+</div>
